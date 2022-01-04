@@ -17,6 +17,7 @@ public class MerkleTree<T> {
     }
 
     public void buildTree() {
+        if (isBuilt) return;
         originalSize = storage.size();
         storage.sort(Comparator.comparing(o -> o.getTransaction().toString()));
 
