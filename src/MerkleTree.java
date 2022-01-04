@@ -75,7 +75,10 @@ public class MerkleTree<T> {
             if (storage.get(parentNode.getChildLeft()).getHTxn().equals(foundNode.getHTxn())) {
                 path.append(storage.get(parentNode.getChildRight()).getName()).append(" ");
             }
-            else path.append(storage.get(parentNode.getChildLeft()).getName()).append(" ");
+            else if (storage.get(parentNode.getChildRight()).getHTxn().equals(foundNode.getHTxn())) {
+                path.append(storage.get(parentNode.getChildLeft()).getName()).append(" ");
+            }
+            else return "Transaction is invalid!";
             foundNode = parentNode;
         }
         return path.toString();
