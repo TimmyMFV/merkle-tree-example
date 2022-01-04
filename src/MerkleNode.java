@@ -3,7 +3,7 @@ public class MerkleNode<T> {
     private T transaction;
     private String name;
     private String HTxn;
-    private Integer childLLeft;
+    private Integer childLeft;
     private Integer childRight;
     private Integer parent;
 
@@ -11,7 +11,7 @@ public class MerkleNode<T> {
         this.transaction = transaction;
         this.name = transaction.toString();
         this.HTxn = Utils.doubleSHA256(transaction);
-        this.childLLeft = null;
+        this.childLeft = null;
         this.childRight = null;
         this.parent = null;
     }
@@ -21,7 +21,7 @@ public class MerkleNode<T> {
     }
 
     public Integer getChildLeft() {
-        return childLLeft;
+        return childLeft;
     }
 
     public Integer getChildRight() {
@@ -44,8 +44,8 @@ public class MerkleNode<T> {
         return HTxn;
     }
 
-    public void setChildLeft(Integer childLLeft) {
-        this.childLLeft = childLLeft;
+    public void setChildLeft(Integer childLeft) {
+        this.childLeft = childLeft;
     }
 
     public void setChildRight(Integer childRight) {
