@@ -8,6 +8,6 @@ public class Main {
         }
         merkleTree.buildTree();
         System.out.println(merkleTree.getMerkleRoot());
-        System.out.println(merkleTree.getMerklePath("C"));
+        System.out.println(merkleTree.getMerklePath("K"));
     }
 }
