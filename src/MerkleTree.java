@@ -21,9 +21,8 @@ public class MerkleTree<T> {
         storage.sort(Comparator.comparing(o -> o.getTransaction().toString()));
 
         //duplicate the last element if total element is odd number
-        int size = storage.size();
-        if (size % 2 != 0) {
-            MerkleNode<T> lastNode = storage.get(size-1);
+        if (originalSize % 2 != 0) {
+            MerkleNode<T> lastNode = storage.get(originalSize-1);
             MerkleNode<T> duplicatedNode = new MerkleNode<>();
             duplicatedNode.setName(lastNode.getName());
             duplicatedNode.setHTxn(lastNode.getHTxn());
