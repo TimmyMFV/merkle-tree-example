@@ -24,7 +24,9 @@ public class MerkleTree<T> {
         int size = storage.size();
         if (size % 2 != 0) {
             MerkleNode<T> lastNode = storage.get(size-1);
-            MerkleNode<T> duplicatedNode = new MerkleNode<>(lastNode.getTransaction());
+            MerkleNode<T> duplicatedNode = new MerkleNode<>();
+            duplicatedNode.setName(lastNode.getName());
+            duplicatedNode.setHTxn(lastNode.getHTxn());
             storage.add(duplicatedNode);
         }
 
